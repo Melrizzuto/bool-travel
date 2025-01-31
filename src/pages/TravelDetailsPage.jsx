@@ -2,8 +2,15 @@ import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 import travels from '../data/travel';
+import Searchbar from '../components/SearchBar';
+
+import { useContext } from 'react';
+import { GlobalContext } from '../context/GlobalContext';
+
 
 function TravelDetailsPage() {
+
+    const { search } = useContext(GlobalContext);
     const { id } = useParams();
     const [isVisible, setIsVisible] = useState({});
 
@@ -20,10 +27,15 @@ function TravelDetailsPage() {
         }));
     }
 
+    const filteredData = travel.participants.filter(participant =>
+        participant.firstName.toLowerCase().includes(search.toLowerCase()) ||
+        participant.lastName.toLowerCase().includes(search.toLowerCase())
+    );
     return (
         <>
+            <Searchbar data={travels}/>
             <h1>Partecipa alla gita a {travel.destination}</h1>
-            {travel.participants.map((participant) => (
+            {search == "" ? travel.participants.map((participant) => (
                 <div key={participant.id}>
                     <h3>{participant.firstName} {participant.lastName}</h3>
                     <button onClick={() => toggleDetails(participant.id)}>
@@ -36,7 +48,23 @@ function TravelDetailsPage() {
                         </div>
                     )}
                 </div>
-            ))}
+            ))
+                :
+                filteredData.map((participant) => (
+                    <div key={participant.id}>
+                        <h3>{participant.firstName} {participant.lastName}</h3>
+                        <button onClick={() => toggleDetails(participant.id)}>
+                            {isVisible[participant.id] ? '▼' : '▲'}
+                        </button>
+                        {isVisible[participant.id] && (
+                            <div>
+                                <h4>Email: {participant.email}</h4>
+                                <h4>Codice Fiscale: {participant.taxCode}</h4>
+                            </div>
+                        )}
+                    </div>
+                ))
+            }
         </>
     );
 }
