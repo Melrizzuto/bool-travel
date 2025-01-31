@@ -4,10 +4,10 @@ import { useParams } from 'react-router-dom';
 import travels from '../data/travel';
 
 function TravelDetailsPage() {
-    const { travelId } = useParams();
+    const { id } = useParams();
     const [isVisible, setIsVisible] = useState({});
 
-    const travel = travels.find(travel => travel.id === parseInt(travelId));
+    const travel = travels.find((travel) => travel.id === parseInt(id));
 
     if (!travel) {
         return <h2>Viaggio non trovato</h2>;
