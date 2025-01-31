@@ -11,11 +11,9 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route Component={DefaultLayout}>
-          <Route path="/travels">
-            <Route index Component={TravelListPage} />
-            <Route path="/details" Component={TravelDetailsPage} />
-          </Route>
+        <Route path="/travels" element={<DefaultLayout />}>
+          <Route index element={<TravelListPage />} />
+          <Route path="/details" element={<TravelDetailsPage />} />
         </Route>
         <Route path="*" Component={NotFound} />
       </Routes>
