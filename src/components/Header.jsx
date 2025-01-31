@@ -1,10 +1,16 @@
+import { Link } from "react-router-dom";
 function Header() {
     return (
-        <header>
-            <div>Logo</div>
-            <h1>Sono header</h1>
+        <header className=" py-3">
+            <Link to="/travels">
+                <div className="container-fluid">
+                    <h1><strong>Bool Travel</strong></h1>
+
+                </div>
+            </Link>
+
         </header>
-    )
+    );
 }
 
 export default Header;
