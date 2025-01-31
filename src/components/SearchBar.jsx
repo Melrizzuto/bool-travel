@@ -1,20 +1,8 @@
-import { useContext } from "react"; // Assicurati di importare useContext
+import { useContext } from "react";
 import { GlobalContext } from "../context/GlobalContext";
 
 function Searchbar({ data }) {
-    const { search, setSearch } = useContext(GlobalContext); // ✅ Moved inside Searchbar
-
-    const filteredData = data
-        .map(travel => ({
-            ...travel,
-            participants: travel.participants.filter(participant =>
-                participant.firstName.toLowerCase().includes(search.toLowerCase()) ||
-                participant.lastName.toLowerCase().includes(search.toLowerCase())
-            )
-        }))
-        .filter(travel => travel.participants.length > 0);
-
-    console.log(filteredData);
+    const { search, setSearch } = useContext(GlobalContext);
 
     const handleChangeInput = (e) => {
         setSearch(e.target.value);
@@ -30,7 +18,7 @@ function Searchbar({ data }) {
                     id="searchBar"
                     name="searchBar"
                     placeholder="Start searching..."
-                    value={search} // Fix: use search directly from context
+                    value={search}
                     onChange={handleChangeInput}
                 />
             </div>
