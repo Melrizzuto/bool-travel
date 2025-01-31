@@ -15,7 +15,7 @@ function Searchbar({ data }) {
         .filter(travel => travel.participants.length > 0);
 
     console.log(filteredData);
-    
+
     const handleChangeInput = (e) => {
         setSearch(e.target.value);
     };
@@ -33,23 +33,6 @@ function Searchbar({ data }) {
                     value={search} // Fix: use search directly from context
                     onChange={handleChangeInput}
                 />
-            </div>
-
-            <div className="container">
-                {filteredData.map((travel) => (
-                    <div key={travel.id}>
-                        <h1>{travel.destination}</h1>
-                        <div className="row row-cols-4">
-                            {travel.participants.map((participant) => (
-                                <div key={participant.id} className="col">
-                                    <h3>{participant.firstName} {participant.lastName}</h3>
-                                    <p>Email: {participant.email}</p>
-                                    <p>Codice Fiscale: {participant.taxCode}</p>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                ))}
             </div>
         </>
     );
