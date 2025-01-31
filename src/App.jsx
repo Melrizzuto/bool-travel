@@ -16,7 +16,7 @@ function App() {
           {/* <Route path="/travels" Component={<DefaultLayout />}> */}
           <Route path="/travels">
             <Route index Component={<TravelListPage />} />
-            <Route path="/:id" Component={<TravelDetailsPage />} />
+            <Route path=":id" Component={<TravelDetailsPage />} />
           </Route>
           {/* </Route> */}
           <Route path="*" Component={NotFound} />
