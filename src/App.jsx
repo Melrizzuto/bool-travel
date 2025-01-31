@@ -13,7 +13,7 @@ function App() {
       <Routes>
         <Route path="/travels" element={<DefaultLayout />}>
           <Route index element={<TravelListPage />} />
-          <Route path="/details" element={<TravelDetailsPage />} />
+          <Route path="/:id" element={<TravelDetailsPage />} />
         </Route>
         <Route path="*" Component={NotFound} />
       </Routes>
