@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import GlobalProvider from "./context/GlobalContext";
+import { GlobalProvider } from "./context/GlobalContext";
 // import DefaultLayout from "./layout/DefaultLayout";
 import TravelListPage from "./pages/TravelListPage";
 import TravelDetailsPage from "./pages/TravelDetailsPage";
@@ -13,13 +13,13 @@ function App() {
     <GlobalProvider>
       <BrowserRouter>
         <Routes>
-          {/* <Route path="/travels" Component={<DefaultLayout />}> */}
+          {/* <Route path="/travels" element={<DefaultLayout />}> */}
           <Route path="/travels">
-            <Route index Component={<TravelListPage />} />
-            <Route path=":id" Component={<TravelDetailsPage />} />
+            <Route index element={<TravelListPage />} />
+            <Route path=":id" element={<TravelDetailsPage />} />
           </Route>
           {/* </Route> */}
-          <Route path="*" Component={NotFound} />
+          <Route path="*" element={NotFound} />
         </Routes>
       </BrowserRouter>
     </GlobalProvider>
