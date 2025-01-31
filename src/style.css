@@ -5,38 +5,39 @@
     box-sizing: border-box;
 }
 
+/* Stile generale */
 body {
-    background-color: rgb(225, 220, 220);
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
 }
 
-/* style icona aggiungi form */
-.add-post-icon {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background-color: #ffc247;
-    padding: 6px 9px;
-    border-radius: 50%;
+/* Header */
+/* .header {
+    background-color: #777777;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "Righteous", serif;
+    font-weight: 400;
+    font-style: normal;
+} */
+
+
+/* general buttons */
+.btn {
+    background-color: #d9534f;
+    border: none;
     color: white;
-    font-size: 12px;
-    cursor: pointer;
-    box-shadow: 0px 4px 10px rgba(241, 240, 240, 0.2);
-    transition: all 0.5s;
-}
-
-.add-post-icon:hover {
-    scale: 1.1;
-}
-
-/* style form */
-form {
-    position: fixed;
-    top: 60px;
-    right: 20px;
-    width: 500px;
-    background-color: white;
-    padding: 20px;
+    display: block;
+    margin: 20px auto;
     border-radius: 50%;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    z-index: 999;
+}
+
+.back-button {
+    width: 150px;
+}
+
+.small-button {
+    width: 80px;
 }
