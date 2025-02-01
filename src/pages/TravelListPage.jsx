@@ -36,7 +36,7 @@ function TravelListPage() {
                                         {/* Discover more link */}
                                         <div className="text-end">
                                             <Link
-                                                to={`/travels/${travel.id}`}
+                                                to={`${travel.id}`}
                                                 className="myBtn small-button"
                                             >
                                                 Discover more

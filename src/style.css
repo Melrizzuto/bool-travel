@@ -127,7 +127,7 @@ header p {
     position: relative;
     overflow: hidden;
     z-index: 0;
-    height: 800px;
+    height: 600px;
 }
 
 .image-container img {
@@ -146,9 +146,25 @@ header p {
 }
 
 /* Accordion styles */
-.accordion-button:not(.collapsed) {
-    color: var(--bs-accordion-active-color);
+.accordion-button {
     background-color: #D9D9D9;
+    color: black;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: #D9D9D9;
+    color: black;
+
+}
+
+.accordion-button::after {
+    transition: transform 0.3s ease-in-out;
+    transform: rotate(0deg);
+}
+
+
+.accordion-button:not(.collapsed)::after {
+    transform: rotate(0deg);
 }
 
 .accordion-item {
@@ -163,4 +179,132 @@ header p {
     display: flex;
     justify-content: space-between;
     font-size: 0.8rem;
+}
+
+
+
+/* media queries */
+@media screen and (max-width: 768px) {
+    .card-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+        padding: 0
+    }
+
+    .card-body .d-flex {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        width: 100%;
+        padding: 0;
+    }
+
+    .card-body p {
+        margin: 0;
+        padding: 10px 0;
+        width: 60%;
+        text-align: left;
+    }
+
+    .card-body .text-end {
+        width: 100%;
+        text-align: center;
+    }
+
+    .searchbar {
+        top: -2%;
+        left: 75%;
+    }
+
+    .searchbar input {
+        width: 300px;
+        font-size: 0.5rem;
+    }
+
+    .header h1 {
+        font-size: 0.5rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
+
+    .container-details {
+        position: relative;
+        margin-top: -400px;
+        z-index: 1;
+        background-color: white;
+        border-radius: 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        padding: 0px 20px 20px;
+        max-width: 100%;
+    }
+
+    .card-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+        padding: 0
+    }
+
+    .card-body .d-flex {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        width: 100%;
+        padding: 0;
+    }
+
+    .card-body p {
+        margin: 0;
+        padding: 10px 0;
+        width: 25%;
+        text-align: left;
+    }
+
+    .card-body .text-end {
+        width: 100%;
+        text-align: center;
+        margin-top: 20px;
+
+    }
+
+    .myBtn {
+        display: inline-block;
+        margin-top: 20px;
+        align-self: center;
+        width: auto;
+    }
+
+    .accordion {
+        padding-bottom: 0;
+        margin: 0;
+    }
+
+    .participant-info {
+        flex-direction: column;
+        margin: -20px;
+        padding: 0;
+    }
+
+    .participant-info span {
+        margin: 10px;
+    }
+
+    .searchbar {
+        top: -2%;
+        left: 75%;
+    }
+
+    .searchbar input {
+        width: 150px;
+        font-size: 0.5rem;
+    }
+
+    .header h1 {
+        font-size: 0.5rem;
+    }
+
 }
