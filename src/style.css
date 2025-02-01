@@ -146,9 +146,14 @@ header p {
 }
 
 /* Accordion styles */
-.accordion-button:not(.collapsed) {
-    color: var(--bs-accordion-active-color);
+.accordion-button {
     background-color: #D9D9D9;
+    color: black;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: #D9D9D9;
+    color: black;
 }
 
 .accordion-item {
