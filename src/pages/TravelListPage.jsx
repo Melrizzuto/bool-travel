@@ -5,7 +5,6 @@ import { GlobalContext } from "../context/GlobalContext.jsx";
 
 function TravelListPage() {
     const{travelsState} = useContext(GlobalContext);
-
     return (
         <div className="myContainer">
 
