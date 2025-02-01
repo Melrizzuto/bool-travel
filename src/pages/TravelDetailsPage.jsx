@@ -1,20 +1,19 @@
 import { useParams } from 'react-router-dom';
-import travels from '../data/travel';
 import Searchbar from '../components/SearchBar';
 import { useContext } from 'react';
 import { GlobalContext } from '../context/GlobalContext';
 import { Link } from 'react-router-dom';
 
 function TravelDetailsPage() {
-    const { search } = useContext(GlobalContext);
+    const { search, travelsState } = useContext(GlobalContext);
     const { id } = useParams();
 
-    const travel = travels.find((travel) => travel.id === parseInt(id));
-
+    const travel = travelsState.find((travel) => travel.id === parseInt(id));
+    console.log(travelsState)
     if (!travel) {
         return <h2>Travel not found</h2>;
     }
-
+    
     const filteredData = travel.participants.filter(participant =>
         participant.firstName.toLowerCase().includes(search.toLowerCase()) ||
         participant.lastName.toLowerCase().includes(search.toLowerCase())
@@ -22,7 +21,7 @@ function TravelDetailsPage() {
 
     return (
         <>
-            <div className='searchbar'><Searchbar data={travels} /></div>
+            <div className='searchbar'><Searchbar data={travelsState} /></div>
 
             <div className="myContainer travel-details">
 
@@ -100,12 +99,29 @@ function TravelDetailsPage() {
                                             aria-labelledby={`heading-${participant.id}`}
                                             data-bs-parent={`#accordion-${participant.id}`}
                                         >
+
+                                            {participant.firstName} {participant.lastName}
+                                        </button>
+                                    </h2>
+                                    <div
+                                        id={`collapse-${participant.id}`}
+                                        className="accordion-collapse collapse"
+                                        aria-labelledby={`heading-${participant.id}`}
+                                        data-bs-parent={`#accordion-${participant.id}`}
+                                    >
+                                        <div className="accordion-body">
+                                            <div className="participant-info">
+                                                <span><strong>Email:</strong> {participant.email}</span>
+                                                <span><strong>Tax Code:</strong> {participant.taxCode}</span>
+                                                {/* <span><strong>Phone:</strong> {participant.phone}</span> */}
+
                                             <div className="accordion-body">
                                                 <div className="participant-info">
                                                     <span><strong>Email:</strong> {participant.email}</span>
                                                     <span><strong>Tax Code:</strong> {participant.taxCode}</span>
                                                     <span><strong>Phone:</strong> {participant.phone}</span>
                                                 </div>
+
                                             </div>
                                         </div>
                                     </div>
