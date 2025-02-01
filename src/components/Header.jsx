@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 function Header() {
     return (
         <header className=" py-3">
-            <Link to="/travels">
+            <Link to="/">
                 <div className="container-fluid">
                     <h1><strong>Bool Travel</strong></h1>
 

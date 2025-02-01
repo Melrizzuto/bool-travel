@@ -115,7 +115,7 @@ function TravelDetailsPage() {
                         ))
                     }
                 </div>
-                <Link to="/travels" className="button back-button">
+                <Link to="/" className="button back-button">
                     Torna Indietro
                 </Link>
             </div>

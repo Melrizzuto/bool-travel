@@ -11,10 +11,8 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<DefaultLayout />}>
-            <Route path="travels">
-              <Route index element={<TravelListPage />} />
-              <Route path=":id" element={<TravelDetailsPage />} />
-            </Route>
+            <Route index element={<TravelListPage />} />
+            <Route path=":id" element={<TravelDetailsPage />} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
