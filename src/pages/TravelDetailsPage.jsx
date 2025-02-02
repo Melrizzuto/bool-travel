@@ -26,7 +26,6 @@ function TravelDetailsPage() {
 
             <div className="myContainer travel-details">
 
-
                 {/* Immagine di placeholder */}
                 {search === "" && (
                     <div className="image-container debug">
@@ -38,7 +37,7 @@ function TravelDetailsPage() {
                     </div>
                 )}
 
-                <div className='container-details debug'>
+                <div className={`container-details ${search ? 'search-active' : ''} debug`}>
                     <h1 className='text-center'>{travel.destination}</h1>
                     <div className='text-center text-secondary'>
                         <span className='mx-4'><strong>Start Date:</strong> {travel.startDate}</span>

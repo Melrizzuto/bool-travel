@@ -229,6 +229,9 @@ header p {
 }
 
 @media screen and (max-width: 576px) {
+    .container-details.search-active {
+        margin-top: 0 !important;
+    }
 
     .container-details {
         position: relative;
@@ -246,7 +249,7 @@ header p {
         flex-direction: column;
         justify-content: space-between;
         width: 100%;
-        padding: 0
+        padding: 0;
     }
 
     .card-body .d-flex {
@@ -260,15 +263,17 @@ header p {
     .card-body p {
         margin: 0;
         padding: 10px 0;
-        width: 25%;
+        max-width: 100%;
         text-align: left;
+        white-space: normal;
+        writing-mode: horizontal-tb;
+        word-wrap: break-word;
     }
 
     .card-body .text-end {
         width: 100%;
         text-align: center;
         margin-top: 20px;
-
     }
 
     .myBtn {
@@ -307,4 +312,17 @@ header p {
         font-size: 0.5rem;
     }
 
+}
+
+@media screen and (max-width: 430px) {
+
+    .card-body p {
+        margin: 0;
+        padding: 0;
+        max-width: 100%;
+        text-align: left;
+        font-size: 16px;
+        line-height: 1.5;
+
+    }
 }
