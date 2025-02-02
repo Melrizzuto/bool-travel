@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
-import travels from "../data/travel.js";
+import FormNewTrip from "../components/FormNewTrip.jsx";
+import { useContext, useEffect } from "react";
+import { GlobalContext } from "../context/GlobalContext.jsx";
 
 function TravelListPage() {
+    const{travelsState} = useContext(GlobalContext);
     return (
         <div className="myContainer">
 
@@ -15,7 +18,7 @@ function TravelListPage() {
             </div>
             <div className="container-details">
                 <h1 className="text-center my-5">Planned Trips</h1>
-                {travels.map((travel) => (
+                {travelsState.map((travel) => (
                     <div key={travel.id} className="card mb-3" style={{ maxWidth: "100%" }}>
                         <div className="d-flex row g-0">
                             <div className="col-md-12">
@@ -46,6 +49,7 @@ function TravelListPage() {
                     </div>
                 ))}
             </div>
+            <FormNewTrip />
         </div>
     );
 }
