@@ -40,7 +40,7 @@ body {
 
 }
 
-.btnss:hover {
+.btns-green:hover {
     background-color: #3f8e99;
 }
 
@@ -49,7 +49,7 @@ body {
     background-color: #f0ad4e;
 }
 
-.btns:hover {
+.btns-orange:hover {
     background-color: #e68a00;
 }
 
