@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { GlobalContext } from "../context/GlobalContext";
 import { useContext } from "react";
 
@@ -8,7 +8,7 @@ function FormNewTrip() {
 
     const autoIncrementTripID = (arr) => {
         if (!Array.isArray(arr) || arr.length === 0) return 1;
-        
+
         const maxID = Math.max(...arr.map(travel => Number(travel.id) || 0));
         return maxID + 1;
     };
@@ -39,7 +39,7 @@ function FormNewTrip() {
 
         setTravelsState([...travelsState, formData]);
 
-        setFormData({   
+        setFormData({
             id: autoIncrementTripID(travelsState),
             destination: "",
             startDate: "",
@@ -79,7 +79,7 @@ function FormNewTrip() {
     };
 
     return (
-        <form className="container my-5" onSubmit={handleFormSubmit}>
+        <form className="container-details my-5" onSubmit={handleFormSubmit}>
             <div className="row">
                 <h2>New Trip info</h2>
                 <div className="form-group col-4">
@@ -203,8 +203,8 @@ function FormNewTrip() {
 
             </div>
 
-            <button type="button" className="btn btn-warning my-3 me-5" onClick={handleAddParticipant}>Add Participant</button>
-            <button type="submit" className="btn btn-primary my-3">Submit</button>
+            <button type="button" className="btn btn-warning" onClick={handleAddParticipant}>Add Participant</button>
+            <button type="submit" className="btn btn-primary">Submit</button>
         </form>
     );
 }
