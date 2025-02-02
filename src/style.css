@@ -23,8 +23,6 @@ body {
 }
 
 /* Buttons */
-
-/* Stile per i pulsanti */
 .btns {
     color: white;
     border: none;
@@ -34,17 +32,14 @@ body {
     margin: 5px;
 }
 
-/* Pulsante di invio */
 .btns-green {
     background-color: #2e757f;
-
 }
 
 .btns-green:hover {
     background-color: #3f8e99;
 }
 
-/* Pulsante per aggiungere partecipante */
 .btns-orange {
     background-color: #f0ad4e;
 }
@@ -130,6 +125,7 @@ header p {
     left: 50%;
     transform: translateX(-50%);
     z-index: 100000;
+    border-radius: 50px;
 }
 
 .searchbar input {
@@ -184,14 +180,12 @@ header p {
 .accordion-button:not(.collapsed) {
     background-color: #D9D9D9;
     color: black;
-
 }
 
 .accordion-button::after {
     transition: transform 0.3s ease-in-out;
     transform: rotate(0deg);
 }
-
 
 .accordion-button:not(.collapsed)::after {
     transform: rotate(0deg);
@@ -211,53 +205,6 @@ header p {
     font-size: 0.8rem;
 }
 
-
-
-/* media queries */
-@media screen and (max-width: 768px) {
-    .card-body {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        width: 100%;
-        padding: 0
-    }
-
-    .card-body .d-flex {
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        width: 100%;
-        padding: 0;
-    }
-
-    .card-body p {
-        margin: 0;
-        padding: 10px 0;
-        width: 60%;
-        text-align: left;
-    }
-
-    .card-body .text-end {
-        width: 100%;
-        text-align: center;
-    }
-
-    .searchbar {
-        top: -2%;
-        left: 75%;
-    }
-
-    .searchbar input {
-        width: 300px;
-        font-size: 0.5rem;
-    }
-
-    .header h1 {
-        font-size: 0.5rem;
-    }
-}
-
 /* Style generale per il modulo */
 .container {
     max-width: 900px;
@@ -274,8 +221,6 @@ h2 {
 }
 
 h3 {
-    font-size: 20px;
-    margin-bottom: 20px;
     color: #444;
 }
 
@@ -308,84 +253,98 @@ input.form-control:hover {
     border: 1px solid #bbb;
 }
 
-
-
-
 /* Responsività */
-@media (max-width: 1400px) {
+@media screen and (max-width: 2000px) {
     .searchbar {
-        position: absolute;
         top: 8px;
-        left: 55%;
-        transform: translateX(-50%);
-        z-index: 100000;
     }
 }
 
-@media (max-width: 768px) {
+/* Schermi grandi */
+@media screen and (max-width: 1400px) {
+    .searchbar {
+        top: 8px;
+        left: 55%;
+        transform: translateX(-50%);
+    }
+}
+
+/* Tablet (max-width: 768px) */
+@media screen and (max-width: 768px) {
+
+    .d-resp {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .card-text {
+        padding: 3px;
+    }
+
+    .py-4 {
+        padding: 0;
+    }
+
+    .myContainer {
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
     .form-group {
         flex: 1 1 100%;
     }
 
+    .container {
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
     .searchbar {
-        top: 3%;
+        top: 2%;
         left: 75%;
+    }
+
+    .searchbar input {
+        width: 300px;
+        font-size: 0.9rem;
+    }
+
+    .header h1 {
+        font-size: 1rem;
+    }
+
+    .image-container img {
+        border-radius: 0;
     }
 }
 
-
+/* Schermi piccoli (max-width: 576px) */
 @media screen and (max-width: 576px) {
-    .container-details.search-active {
-        margin-top: 0 !important;
+    .container {
+        width: 100%;
+        padding-right: 0;
+        padding-left: 0;
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    header {
+        margin-bottom: 0;
     }
 
     .container-details {
-        position: relative;
-        margin-top: -400px;
-        z-index: 1;
-        background-color: white;
-        border-radius: 20px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        padding: 0px 20px 20px;
+        margin-top: -350px;
+        padding: 8px 20px 20px;
         max-width: 100%;
     }
 
-    .card-body {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        width: 100%;
-        padding: 0;
-    }
-
-    .card-body .d-flex {
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        width: 100%;
-        padding: 0;
-    }
-
-    .card-body p {
-        margin: 0;
-        padding: 10px 0;
-        max-width: 100%;
-        text-align: left;
-        white-space: normal;
-        writing-mode: horizontal-tb;
-        word-wrap: break-word;
-    }
-
-    .card-body .text-end {
-        width: 100%;
-        text-align: center;
-        margin-top: 20px;
-    }
 
     .myBtn {
         display: inline-block;
         margin-top: 20px;
-        align-self: center;
         width: auto;
     }
 
@@ -400,35 +359,26 @@ input.form-control:hover {
         padding: 0;
     }
 
-    .participant-info span {
-        margin: 10px;
-    }
-
-    .searchbar {
-        top: 5%;
-        left: 75%;
-    }
-
     .searchbar input {
         width: 150px;
-        font-size: 0.5rem;
+        font-size: 0.8rem;
     }
-
-    .header h1 {
-        font-size: 0.5rem;
-    }
-
-}
-
-@media screen and (max-width: 430px) {
 
     .card-body p {
-        margin: 0;
-        padding: 0;
-        max-width: 100%;
-        text-align: left;
         font-size: 16px;
         line-height: 1.5;
+    }
 
+    .card-body .text-end {
+        text-align: center;
+        margin-top: 20px;
+    }
+}
+
+/* Schermi extra piccoli (max-width: 430px) */
+@media screen and (max-width: 430px) {
+    .card-body p {
+        font-size: 14px;
+        line-height: 1.4;
     }
 }

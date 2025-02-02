@@ -80,51 +80,52 @@ function FormNewTrip() {
 
     return (
         <form className="container-details my-5" onSubmit={handleFormSubmit}>
+            <div className="text-center"><h2>Add new trip</h2></div>
             <div className="row">
-                <h2>New Trip info</h2>
+                <h3>Trip info</h3>
                 <div className="form-group col-4">
-                    <label htmlFor="destination">Enter new trip location</label>
+                    <label htmlFor="destination">New trip location</label>
                     <input
                         type="text"
                         className="form-control"
                         id="destination"
                         name="destination"
-                        placeholder="Enter trip name..."
+                        placeholder="Enter trip name"
                         value={formData.destination}
                         onChange={handleInputChange}
                     />
                 </div>
                 <div className="form-group col-4">
-                    <label htmlFor="startDate">Enter start date trip</label>
+                    <label htmlFor="startDate">Start date</label>
                     <input
                         type="text"
                         className="form-control"
                         id="startDate"
                         name="startDate"
-                        placeholder="Enter trip start date..."
+                        placeholder="Enter trip start date"
                         value={formData.startDate}
                         onChange={handleInputChange}
                     />
                 </div>
                 <div className="form-group col-4">
-                    <label htmlFor="endDate">Enter start date trip</label>
+                    <label htmlFor="endDate">End date</label>
                     <input
                         type="text"
                         className="form-control"
                         id="endDate"
                         name="endDate"
-                        placeholder="Enter trip end date..."
+                        placeholder="Enter trip end date"
                         value={formData.endDate}
                         onChange={handleInputChange}
                     />
                 </div>
             </div>
             <div>
-                <h3>Add Participants</h3>
+                <h3>Participant info</h3>
                 {formData.participants.map((participant, index) => (
                     <div key={index} className="row">
                         <div className="form-group col-3">
-                            <label htmlFor={`firstName_${index}`}>Enter First Name</label>
+                            <label htmlFor={`firstName_${index}`}>First Name</label>
                             <input
                                 type="text"
                                 className="form-control"
@@ -138,12 +139,12 @@ function FormNewTrip() {
                                         participants: updatedParticipants,
                                     });
                                 }}
-                                placeholder="First Name"
+                                placeholder="Enter first Name"
                             />
                         </div>
 
                         <div className="form-group col-3">
-                            <label htmlFor={`lastName_${index}`}>Enter Last Name</label>
+                            <label htmlFor={`lastName_${index}`}>Last Name</label>
                             <input
                                 type="text"
                                 className="form-control"
@@ -157,12 +158,12 @@ function FormNewTrip() {
                                         participants: updatedParticipants,
                                     });
                                 }}
-                                placeholder="Last Name"
+                                placeholder="Enter last Name"
                             />
                         </div>
 
                         <div className="form-group col-3">
-                            <label htmlFor={`email_${index}`}>Enter Email</label>
+                            <label htmlFor={`email_${index}`}>Email</label>
                             <input
                                 type="text"
                                 className="form-control"
@@ -176,12 +177,12 @@ function FormNewTrip() {
                                         participants: updatedParticipants,
                                     });
                                 }}
-                                placeholder="Email"
+                                placeholder="Enter email"
                             />
                         </div>
 
                         <div className="form-group col-3">
-                            <label htmlFor={`taxCode_${index}`}>Enter Tax Code</label>
+                            <label htmlFor={`taxCode_${index}`}>Tax Code</label>
                             <input
                                 type="text"
                                 className="form-control"
@@ -195,7 +196,7 @@ function FormNewTrip() {
                                         participants: updatedParticipants,
                                     });
                                 }}
-                                placeholder="Tax Code"
+                                placeholder="Enter Tax Code"
                             />
                         </div>
                     </div>

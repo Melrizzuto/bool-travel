@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import FormNewTrip from "../components/FormNewTrip.jsx";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { GlobalContext } from "../context/GlobalContext.jsx";
 
 function TravelListPage() {
-    const{travelsState} = useContext(GlobalContext);
+    const { travelsState } = useContext(GlobalContext);
     return (
         <div className="myContainer">
 
@@ -28,10 +28,10 @@ function TravelListPage() {
                                         <h3 className="card-title"><strong>{travel.destination}</strong></h3>
                                     </div>
                                     {/* Date and participants */}
-                                    <div className="d-flex justify-content-between mb-3">
-                                        <p className="card-text py-4"><strong>Start Date:</strong> {travel.startDate}</p>
-                                        <p className="card-text py-4"><strong>End Date:</strong> {travel.endDate}</p>
-                                        <p className="card-text py-4"><strong>Participants:</strong> {travel.participants.length}</p>
+                                    <div className="d-resp d-flex justify-content-between py-2">
+                                        <p className="card-text"><strong>Start Date:</strong> {travel.startDate}</p>
+                                        <p className="card-text"><strong>End Date:</strong> {travel.endDate}</p>
+                                        <p className="card-text"><strong>Participants:</strong> {travel.participants.length}</p>
                                         {/* Discover more link */}
                                         <div className="text-end">
                                             <Link
