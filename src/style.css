@@ -23,6 +23,36 @@ body {
 }
 
 /* Buttons */
+
+/* Stile per i pulsanti */
+.btns {
+    color: white;
+    border: none;
+    transition: background-color 0.3s;
+    border-radius: 40px;
+    padding: 8px;
+    margin: 5px;
+}
+
+/* Pulsante di invio */
+.btns-green {
+    background-color: #2e757f;
+
+}
+
+.btnss:hover {
+    background-color: #3f8e99;
+}
+
+/* Pulsante per aggiungere partecipante */
+.btns-orange {
+    background-color: #f0ad4e;
+}
+
+.btns:hover {
+    background-color: #e68a00;
+}
+
 .myBtn {
     background-color: #d9534f;
     border: none;
@@ -278,77 +308,16 @@ input.form-control:hover {
     border: 1px solid #bbb;
 }
 
-/* Stile per i pulsanti */
-button {
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    margin: 10px;
-}
 
-/* Pulsante di invio */
-button[type="submit"] {
-    background-color: #0f9d9d;
-    color: white;
-    border: none;
-    transition: background-color 0.3s;
-    border-radius: 40px;
-}
 
-button[type="submit"]:hover {
-    background-color: #0056b3;
-}
 
-/* Pulsante per aggiungere partecipante */
-button[type="button"] {
-    background-color: #f0ad4e;
-    color: white;
-    border: none;
-    transition: background-color 0.3s;
-    border-radius: 40px;
-}
-
-button[type="button"]:hover {
-    background-color: #e68a00;
-}
-
-/* Stile per i partecipanti */
-.participant-info {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 15px;
-}
-
-.participant-info .form-group {
-    flex: 1 1 0;
-}
-
-.participant-info label {
-    font-size: 14px;
-    color: #333;
-    margin-bottom: 5px;
-}
-
-.participant-info input {
-    font-size: 14px;
-    padding: 8px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    transition: border 0.3s;
-}
-
-.participant-info input:focus {
-    outline: none;
-    border-color: #007bff;
-}
-
-/* media queries */
+/* Responsività */
 @media (max-width: 768px) {
     .form-group {
         flex: 1 1 100%;
     }
 }
+
 
 @media screen and (max-width: 576px) {
     .container-details.search-active {
@@ -421,7 +390,7 @@ button[type="button"]:hover {
     }
 
     .searchbar {
-        top: -2%;
+        top: 5%;
         left: 75%;
     }
 

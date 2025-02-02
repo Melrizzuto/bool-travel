@@ -203,8 +203,8 @@ function FormNewTrip() {
 
             </div>
 
-            <button type="button" className="btn btn-warning" onClick={handleAddParticipant}>Add Participant</button>
-            <button type="submit" className="btn btn-primary">Submit</button>
+            <button type="button" className="btns btns-orange " onClick={handleAddParticipant}>Add Participant</button>
+            <button type="submit" className="btns btns-green ">Submit</button>
         </form>
     );
 }
