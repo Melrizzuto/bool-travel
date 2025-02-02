@@ -1,19 +1,23 @@
 import { useParams } from 'react-router-dom';
 import Searchbar from '../components/SearchBar';
-import { useContext } from 'react';
+import { useEffect, useContext } from 'react';
 import { GlobalContext } from '../context/GlobalContext';
 import { Link } from 'react-router-dom';
 
 function TravelDetailsPage() {
-    const { search, travelsState } = useContext(GlobalContext);
+    const { search, setSearch, travelsState } = useContext(GlobalContext);
     const { id } = useParams();
+
+    useEffect(() => {
+        setSearch('');
+    }, [id]);
 
     const travel = travelsState.find((travel) => travel.id === parseInt(id));
     // console.log(travel)
     if (!travel) {
         return <h2>Travel not found</h2>;
     }
-    
+
     const filteredData = travel.participants.filter(participant =>
         participant.firstName.toLowerCase().includes(search.toLowerCase()) ||
         participant.lastName.toLowerCase().includes(search.toLowerCase())
