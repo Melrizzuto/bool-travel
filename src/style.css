@@ -355,7 +355,7 @@ input.form-control:hover {
 
     .participant-info {
         flex-direction: column;
-        margin: -20px;
+        margin: 0;
         padding: 0;
     }
 
@@ -380,5 +380,9 @@ input.form-control:hover {
     .card-body p {
         font-size: 14px;
         line-height: 1.4;
+    }
+
+    .participant-info {
+        padding: 10px;
     }
 }
