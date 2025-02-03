@@ -72,6 +72,7 @@ function TravelDetailsPage() {
                                         <div className="accordion-body">
                                             <div className="participant-info">
                                                 <span><strong>Email:</strong> {participant.email}</span>
+                                                <span><strong>Number:</strong> {participant.number}</span>
                                                 <span><strong>Tax Code:</strong> {participant.taxCode}</span>
 
                                             </div>

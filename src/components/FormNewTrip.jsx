@@ -32,6 +32,7 @@ function FormNewTrip() {
             firstName: "",
             lastName: "",
             email: "",
+            number: "",
             taxCode: "",
         }]
     });
@@ -53,6 +54,7 @@ function FormNewTrip() {
                 firstName: "",
                 lastName: "",
                 email: "",
+                number: "",
                 taxCode: "",
             }]
         });
@@ -73,6 +75,7 @@ function FormNewTrip() {
             firstName: "",
             lastName: "",
             email: "",
+            number: "",
             taxCode: ""
         };
         console.log('Aggiunto nuovo partecipante:', newParticipant);
@@ -171,7 +174,7 @@ function FormNewTrip() {
                     <h3>Participant info</h3>
                     {formData.participants.map((participant, index) => (
                         <div key={index} className="row">
-                            <div className="form-group col-3">
+                            <div className="form-group col-2">
                                 <label htmlFor={`firstName_${index}`}>First Name</label>
                                 <input
                                     type="text"
@@ -190,7 +193,7 @@ function FormNewTrip() {
                                 />
                             </div>
 
-                            <div className="form-group col-3">
+                            <div className="form-group col-2">
                                 <label htmlFor={`lastName_${index}`}>Last Name</label>
                                 <input
                                     type="text"
@@ -209,7 +212,7 @@ function FormNewTrip() {
                                 />
                             </div>
 
-                            <div className="form-group col-3">
+                            <div className="form-group col-2">
                                 <label htmlFor={`email_${index}`}>Email</label>
                                 <input
                                     type="text"
@@ -227,8 +230,25 @@ function FormNewTrip() {
                                     placeholder="Enter email"
                                 />
                             </div>
-
-                            <div className="form-group col-3">
+                            <div className="form-group col-2">
+                                <label htmlFor={`number_${index}`}>Number</label>
+                                <input
+                                    type="number"
+                                    className="form-control"
+                                    name={`number_${index}`}
+                                    value={participant.number}
+                                    onChange={(e) => {
+                                        const updatedParticipants = [...formData.participants];
+                                        updatedParticipants[index].number = e.target.value;
+                                        setFormData({
+                                            ...formData,
+                                            participants: updatedParticipants,
+                                        });
+                                    }}
+                                    placeholder="Enter Phone Number"
+                                />
+                            </div>
+                            <div className="form-group col-2">
                                 <label htmlFor={`taxCode_${index}`}>Tax Code</label>
                                 <input
                                     type="text"

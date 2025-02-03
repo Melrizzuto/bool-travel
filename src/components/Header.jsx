@@ -4,7 +4,7 @@ function Header() {
         <header className=" py-3">
             <Link to="/">
                 <div className="container-fluid">
-                    <h1><strong>Bool Travel</strong></h1>
+                    <h1><strong>Bool Road</strong></h1>
 
                 </div>
             </Link>
