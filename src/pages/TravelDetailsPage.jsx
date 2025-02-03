@@ -107,7 +107,7 @@ function TravelDetailsPage() {
                                                 <div className="participant-info">
                                                     <span><strong>Email:</strong> {participant.email}</span>
                                                     <span><strong>Tax Code:</strong> {participant.taxCode}</span>
-                                                    <span><strong>Phone:</strong> {participant.phone}</span>
+                                                    <span><strong>Phone:</strong> {participant.number}</span>
                                                 </div>
                                             </div>
                                         </div>
